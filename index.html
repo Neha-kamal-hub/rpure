@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Rpure — Pure & Alkaline Water Solutions</title>
+  <meta name="description" content="Rpure — Advanced Alkaline Water Purifiers. Experience the health benefits of clean, mineral-rich alkaline water for a better lifestyle." />
+  <style>
+    :root{
+      --primary:#00aaff;
+      --accent:#00ffcc;
+      --bg1:#e6faff;
+      --bg2:#ffffff;
+      --text:#0b1a2a;
+      --muted:#5f6f7f;
+      --radius:18px;
+      --shadow:0 10px 30px rgba(0, 170, 255, 0.3);
+      font-family:'Poppins', sans-serif;
+    }
+    *{box-sizing:border-box;margin:0;padding:0;scroll-behavior:smooth}
+    body{background:linear-gradient(180deg,var(--bg1),var(--bg2));color:var(--text);overflow-x:hidden;}
+
+    header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.9);backdrop-filter:blur(10px);box-shadow:0 2px 10px rgba(0,0,0,0.1);}
+    nav{max-width:1100px;margin:auto;padding:16px 20px;display:flex;align-items:center;justify-content:space-between;}
+
+    .brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:26px;background:linear-gradient(90deg,var(--primary),var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent;letter-spacing:1px;}
+    .brand img{width:45px;height:45px;filter:drop-shadow(0 0 4px var(--accent));animation:pulse 3s infinite ease-in-out;}
+    @keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.1)}}
+
+    .nav-links{display:flex;gap:24px;align-items:center;font-weight:500}
+    .btn{padding:10px 20px;border-radius:var(--radius);background:linear-gradient(90deg,var(--primary),var(--accent));color:white;border:none;cursor:pointer;transition:all .3s;font-weight:600;}
+    .btn:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+
+    .hero{position:relative;text-align:center;padding:140px 20px;background:radial-gradient(circle at top left,var(--accent),var(--primary));color:white;overflow:hidden;}
+    .hero::before{content:'';position:absolute;bottom:0;left:0;width:100%;height:120px;background:url('https://www.svgrepo.com/show/382104/wave.svg') repeat-x;background-size:cover;opacity:0.2;animation:wave 8s infinite linear;}
+    @keyframes wave{0%{background-position-x:0;}100%{background-position-x:1000px;}}
+
+    .hero h1{font-size:52px;margin-bottom:16px;text-shadow:0 4px 20px rgba(0,0,0,0.3);}
+    .hero p{max-width:700px;margin:auto;color:#f0faff;font-size:18px;line-height:1.7;}
+    .cta{margin-top:30px;display:flex;gap:16px;justify-content:center;flex-wrap:wrap;}
+    .cta .btn.secondary{background:white;color:var(--primary);}
+
+    section{max-width:1100px;margin:auto;padding:80px 20px;opacity:0;transform:translateY(40px);transition:all 1s ease-out;}
+    section.visible{opacity:1;transform:translateY(0);}
+
+    h2{text-align:center;font-size:34px;margin-bottom:14px;color:var(--primary);font-weight:700;text-transform:uppercase;letter-spacing:1px;}
+    .section-desc{text-align:center;color:var(--muted);max-width:700px;margin:0 auto 40px;font-size:16px;}
+
+    .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;}
+    .about-grid img{width:100%;border-radius:var(--radius);box-shadow:var(--shadow)}
+    .about-text{color:var(--muted);line-height:1.7;font-size:16px;}
+
+    .benefits{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:24px;margin-top:40px;}
+    .benefit{background:white;border-radius:var(--radius);padding:20px;box-shadow:0 8px 20px rgba(0,0,0,0.05);transition:transform .3s, box-shadow .3s;text-align:center;}
+    .benefit:hover{transform:translateY(-8px);box-shadow:var(--shadow);}
+    .benefit h4{color:var(--primary);margin-bottom:10px;}
+
+    .products{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:30px;}
+    .product{background:white;border-radius:var(--radius);padding:24px;text-align:center;box-shadow:0 8px 20px rgba(0,0,0,0.08);transition:transform .3s, box-shadow .3s;}
+    .product:hover{transform:translateY(-8px) scale(1.02);box-shadow:var(--shadow);}
+    .product img{width:100%;height:230px;object-fit:cover;border-radius:var(--radius);}
+    .product h3{margin-top:14px;color:var(--primary);font-size:20px;}
+    .product p{color:var(--muted);font-size:15px;margin:10px 0 16px;}
+
+    .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;}
+    .contact-card{background:white;padding:30px;border-radius:var(--radius);box-shadow:var(--shadow);}
+    form{display:flex;flex-direction:column;gap:14px;}
+    input,textarea{padding:12px;border-radius:8px;border:1px solid #e2e8f0;font-size:15px;}
+    input[type=submit]{background:linear-gradient(90deg,var(--primary),var(--accent));color:white;border:none;cursor:pointer;transition:all .3s;font-weight:600;}
+    input[type=submit]:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
+
+    footer{text-align:center;padding:30px;background:linear-gradient(90deg,var(--primary),var(--accent));color:white;margin-top:60px;font-weight:500;}
+
+    @media(max-width:768px){
+      .about-grid,.contact-grid{grid-template-columns:1fr;}
+      .hero h1{font-size:36px;}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="brand">
+        <img src="https://i.ibb.co/Y7GYwff/stylish-water-drop-logo.png" alt="Rpure Logo"> Rpure
+      </div>
+      <div class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#benefits">Benefits</a>
+        <a href="#products">Products</a>
+        <a href="#contact">Contact</a>
+        <button class="btn">Enquire</button>
+      </div>
+    </nav>
+  </header>
+
+  <section id="home" class="hero">
+    <h1>Pure & Alkaline Water for a Healthier Life</h1>
+    <p>Rpure brings you the ultimate alkaline water purification experience — refreshing, mineral-rich, and designed to balance your body’s pH naturally.</p>
+    <div class="cta">
+      <a href="#benefits" class="btn">See Benefits</a>
+      <a href="#contact" class="btn secondary">Get a Quote</a>
+    </div>
+  </section>
+
+  <section id="about">
+    <h2>About Us</h2>
+    <p class="section-desc">Rpure combines advanced RO and alkaline technology to ensure every drop of water is pure, safe, and enriched with essential minerals.</p>
+    <div class="about-grid">
+      <img src="https://cdn.pixabay.com/photo/2020/09/25/20/10/water-purifier-5602920_1280.jpg" alt="Water Purifier" />
+      <div class="about-text">
+        <p>We believe hydration should do more than quench your thirst — it should rejuvenate your body. Rpure’s alkaline water machines balance your body’s acidity, boost metabolism, and support overall wellness.</p>
+        <p>Trusted by over <strong>10,000+ families</strong> and growing, Rpure delivers health in every glass through innovative and reliable purification systems.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="benefits">
+    <h2>Benefits of Alkaline Water</h2>
+    <p class="section-desc">Discover why alkaline water is the smarter choice for your body and lifestyle.</p>
+    <div class="benefits">
+      <div class="benefit">
+        <h4>⚡ Boosts Energy Levels</h4>
+        <p>Alkaline water helps neutralize acidity and improve hydration, leading to better energy and reduced fatigue.</p>
+      </div>
+      <div class="benefit">
+        <h4>💧 Improves Hydration</h4>
+        <p>Smaller water molecule clusters make it easier for your body to absorb and stay hydrated longer.</p>
+      </div>
+      <div class="benefit">
+        <h4>💪 Strengthens Immunity</h4>
+        <p>Balances body pH and boosts the immune system to fight free radicals and toxins effectively.</p>
+      </div>
+      <div class="benefit">
+        <h4>🌿 Detoxifies Naturally</h4>
+        <p>Flushes out harmful toxins while maintaining the body’s natural balance for glowing skin and better digestion.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="products">
+    <h2>Our Products</h2>
+    <p class="section-desc">Explore our range of stylish and durable alkaline water purifiers for homes and businesses.</p>
+    <div class="products">
+      <div class="product">
+        <img src="https://cdn.pixabay.com/photo/2020/08/29/09/55/water-purifier-5526229_1280.jpg" alt="Rpure AquaSmart" />
+        <h3>Rpure AquaSmart</h3>
+        <p>Alkaline RO + UV + UF | 7-stage filtration | 10L tank | Smart indicators</p>
+        <a href="#contact" class="btn">Request Quote</a>
+      </div>
+      <div class="product">
+        <img src="https://cdn.pixabay.com/photo/2017/09/07/08/56/water-purifier-2727923_1280.jpg" alt="Rpure PurePro" />
+        <h3>Rpure PurePro</h3>
+        <p>RO + Alkaline Mineralizer | Enhanced taste | 12L sleek design</p>
+        <a href="#contact" class="btn">Request Quote</a>
+      </div>
+      <div class="product">
+        <img src="https://cdn.pixabay.com/photo/2018/02/13/21/08/water-3150442_1280.jpg" alt="Rpure Commercial" />
+        <h3>Rpure Commercial</h3>
+        <p>High-capacity alkaline purification for offices & shops</p>
+        <a href="#contact" class="btn">Request Quote</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p class="section-desc">Reach out for more details or get a personalized alkaline water solution for your home or business.</p>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <h3>Get in Touch</h3>
+        <p>📞 +91 12345 67890<br>✉️ info@rpure.example<br>🏠 123 Water Street, Clean City</p>
+      </div>
+      <div class="contact-card">
+        <h3>Request a Quote</h3>
+        <form onsubmit="return sendEmail(event)">
+          <input type="text" id="name" placeholder="Your Name" required />
+          <input type="email" id="email" placeholder="Email" required />
+          <input type="tel" id="phone" placeholder="Phone" required />
+          <input type="text" id="product" placeholder="Product of interest" />
+          <textarea id="message" rows="4" placeholder="Message"></textarea>
+          <input type="submit" value="Send Request" />
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© <span id="year"></span> Rpure — Pure & Alkaline Water Solutions</p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent=new Date().getFullYear();
+    function sendEmail(e){
+      e.preventDefault();
+      const name=encodeURIComponent(document.getElementById('name').value);
+      const phone=encodeURIComponent(document.getElementById('phone').value);
+      const email=encodeURIComponent(document.getElementById('email').value);
+      const product=encodeURIComponent(document.getElementById('product').value);
+      const message=encodeURIComponent(document.getElementById('message').value);
+      const subject=encodeURIComponent('Rpure Quote Request from '+name);
+      const body=encodeURIComponent(`Name: ${name}\nPhone: ${phone}\nEmail: ${email}\nProduct: ${product}\nMessage: ${message}`);
+      window.location.href=`mailto:info@rpure.example?subject=${subject}&body=${body}`;
+    }
+
+    const sections=document.querySelectorAll('section');
+    const observer=new IntersectionObserver((entries)=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){entry.target.classList.add('visible');}
+      });
+    },{threshold:0.2});
+    sections.forEach(sec=>observer.observe(sec));
+  </script>
+</body>
+</html>
