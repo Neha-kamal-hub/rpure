@@ -1,289 +1,211 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Rpure — Natural & Alkaline Water Solutions</title>
-  <meta name="description" content="Rpure - Natural & Alkaline Water Purifiers. Improve hydration and wellness with mineral-rich alkaline water." />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+  <title>R-Pure Catalog</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
-    :root{
-      --teal-600: #0ea5a4;
-      --teal-400: #3dd6c8;
-      --bg: #ffffff;
-      --soft: #f6fffd;
-      --muted: #5b6b72;
-      --card: #ffffff;
-      --radius:14px;
-      --glass: rgba(14,165,164,0.08);
-      --shadow: 0 12px 30px rgba(16, 86, 82, 0.08);
-      --maxw:1100px;
-      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
-    }
-
-    *{box-sizing:border-box}
-    html,body{height:100%;margin:0;background:linear-gradient(180deg,var(--soft),#ffffff);color:#082626}
-    a{color:var(--teal-600);text-decoration:none}
-
-    .wrap{max-width:var(--maxw);margin:0 auto;padding:28px}
-
-    /* header */
-    header{position:sticky;top:12px;z-index:50}
-    .nav{display:flex;align-items:center;justify-content:space-between;background:rgba(255,255,255,0.9);padding:10px 16px;border-radius:12px;box-shadow:0 6px 18px rgba(8,38,38,0.04)}
-    .logo{display:flex;align-items:center;gap:12px}
-    .logo-mark{width:52px;height:52px;border-radius:12px;background:linear-gradient(135deg,var(--teal-600),var(--teal-400));display:grid;place-items:center;box-shadow:0 6px 18px rgba(14,165,164,0.18)}
-    .logo-mark svg{width:36px;height:36px;filter:drop-shadow(0 6px 18px rgba(14,165,164,0.18))}
-    .brand{font-weight:700;font-size:18px}
-    .tagline{font-size:12px;color:var(--muted)}
-    .nav-links{display:flex;gap:18px;align-items:center}
-    .btn-ghost{padding:8px 12px;border-radius:10px;background:transparent;border:1px solid rgba(8,38,38,0.06);}
-    .btn-primary{background:linear-gradient(90deg,var(--teal-600),var(--teal-400));color:white;padding:10px 16px;border-radius:10px;border:none}
-
-    /* hero */
-    .hero{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;padding:64px 0}
-    .hero-left h1{font-family:'Playfair Display', serif;font-size:44px;margin:0 0 10px;line-height:1.02}
-    .hero-left p{color:var(--muted);max-width:640px;margin:8px 0 0}
-    .hero-ctas{margin-top:22px;display:flex;gap:12px}
-    .hero-card{background:var(--card);padding:18px;border-radius:14px;box-shadow:var(--shadow)}
-
-    .hero-right{display:flex;flex-direction:column;gap:12px;align-items:center}
-    .hero-media{width:100%;height:300px;border-radius:14px;background:#eafffb;display:grid;place-items:center;overflow:hidden}
-    .hero-media img{width:100%;height:100%;object-fit:cover}
-
-    /* sections */
-    section{padding:64px 0}
-    h2{font-size:26px;color:var(--teal-600);margin-bottom:8px}
-    .lead{color:var(--muted);max-width:760px}
-
-    /* about */
-    .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center;margin-top:18px}
-    .about-img{border-radius:12px;overflow:hidden;box-shadow:var(--shadow)}
-
-    /* benefits */
-    .benefits{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:18px}
-    .benefit{background:linear-gradient(180deg,#ffffff,rgba(14,165,164,0.03));padding:18px;border-radius:12px;box-shadow:0 8px 24px rgba(12,72,70,0.04);text-align:center}
-    .benefit h4{margin:8px 0;color:var(--teal-600)}
-    .benefit p{color:var(--muted);font-size:14px}
-
-    /* products */
-    .products{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:18px}
-    .product{background:var(--card);border-radius:12px;padding:16px;box-shadow:0 8px 22px rgba(10,60,58,0.04);transition:transform .28s,box-shadow .28s}
-    .product:hover{transform:translateY(-8px);box-shadow:0 20px 40px rgba(10,60,58,0.08)}
-    .product img{width:100%;height:170px;object-fit:cover;border-radius:10px}
-    .product h3{margin:12px 0 6px;color:#064a48}
-    .product small{color:var(--muted)}
-
-    /* contact */
-    .contact-grid{display:grid;grid-template-columns:1fr 420px;gap:20px;margin-top:18px}
-    .contact-card{background:linear-gradient(180deg,#ffffff,rgba(14,165,164,0.02));padding:18px;border-radius:12px}
-    form{display:flex;flex-direction:column;gap:12px}
-    input,textarea{padding:12px;border-radius:8px;border:1px solid #e7f7f6}
-    input[type=submit]{background:linear-gradient(90deg,var(--teal-600),var(--teal-400));color:white;padding:12px;border-radius:10px;border:none}
-
-    footer{margin-top:48px;padding:24px;text-align:center;color:var(--muted)}
-
-    /* responsive */
-    @media(max-width:980px){
-      .hero{grid-template-columns:1fr}
-      .hero-right{order:2}
-      .products{grid-template-columns:repeat(2,1fr)}
-      .benefits{grid-template-columns:repeat(2,1fr)}
-      .contact-grid{grid-template-columns:1fr}
-      .about-grid{grid-template-columns:1fr}
-    }
-    @media(max-width:620px){
-      .products{grid-template-columns:1fr}
-      .benefits{grid-template-columns:1fr}
-      .logo-mark{width:44px;height:44px}
-      .brand{font-size:18px}
-      .hero-left h1{font-size:28px}
-    }
-
-    /* subtle entry animations */
-    .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease, transform .7s ease}
-    .reveal.visible{opacity:1;transform:none}
+    body { font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; }
+    .glass { background: rgba(255,255,255,0.7); backdrop-filter: blur(8px); }
   </style>
 </head>
-<body>
-  <div class="wrap">
-    <header>
-      <div class="nav">
-        <div class="logo">
-          <div class="logo-mark" aria-hidden="true">
-            <!-- elegant water & leaf mark (SVG) -->
-            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <path d="M32 4c0 0-12 12-12 20 0 6.627 5.373 12 12 12s12-5.373 12-12C44 16 32 4 32 4z" fill="#ffffff" opacity="0.95"/>
-              <path d="M22 36c6 0 10 6 10 6s4-6 10-6c-6 8-10 16-10 16S28 44 22 36z" fill="#ffffff" opacity="0.8"/>
-            </svg>
-          </div>
-          <div>
-            <div class="brand">Rpure</div>
-            <div class="tagline">Alkaline Water for Natural Wellness</div>
-          </div>
-        </div>
-        <div class="nav-links">
-          <a href="#home">Home</a>
-          <a href="#about">About</a>
-          <a href="#benefits">Benefits</a>
-          <a href="#products">Products</a>
-          <a href="#contact" class="btn-ghost">Contact</a>
-          <button class="btn-primary">Enquire</button>
-        </div>
+<body class="bg-slate-50 text-slate-800">
+
+  <!-- Navbar -->
+  <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="#" class="text-xl font-extrabold tracking-tight text-slate-900">R-Pure</a>
+      <div class="hidden md:flex gap-6 text-sm font-medium">
+        <a href="#products" class="hover:text-slate-900">Products</a>
+        <a href="#features" class="hover:text-slate-900">Features</a>
+        <a href="#specs" class="hover:text-slate-900">Specs</a>
+        <a href="#contact" class="hover:text-slate-900">Contact</a>
       </div>
-    </header>
+      <a href="#contact" class="px-4 py-2 rounded-xl bg-slate-900 text-white text-sm font-semibold shadow hover:shadow-md">Enquire</a>
+    </div>
+  </nav>
 
-    <main>
-      <section id="home" class="hero">
-        <div class="hero-left">
-          <h1>Hydrate Better — Live Better</h1>
-          <p class="lead">Rpure’s alkaline water purifiers gently raise water pH and enrich it with essential minerals for improved hydration, digestion, and everyday wellness.</p>
-          <div class="hero-ctas">
-            <a href="#products" class="btn-primary">Shop Products</a>
-            <a href="#benefits" class="btn-ghost">Why Alkaline?</a>
-          </div>
-
-          <div class="hero-card" style="margin-top:22px">
-            <strong>Featured — Rpure AquaSmart</strong>
-            <div style="color:var(--muted);margin-top:8px">7-stage alkaline RO + UV with mineralizer. Compact design for modern kitchens.</div>
+  <!-- Hero -->
+  <header class="relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-cyan-100 to-slate-100"></div>
+    <div class="relative max-w-7xl mx-auto px-6 py-20 sm:py-28">
+      <div class="grid md:grid-cols-2 gap-10 items-center">
+        <div>
+          <span class="inline-block px-3 py-1 text-xs rounded-full bg-cyan-200 text-cyan-900 font-semibold">Catalog</span>
+          <h1 class="mt-4 text-4xl sm:text-5xl font-extrabold leading-tight text-slate-900">R-Pure Water Solutions</h1>
+          <p class="mt-4 text-lg text-slate-700">Healthy, great-tasting water through advanced purification and ionization — presented as a clean, responsive website based on your PDF catalog.</p>
+          <div class="mt-8 flex gap-4">
+            <a href="#products" class="px-5 py-3 rounded-2xl bg-slate-900 text-white font-semibold shadow-md hover:shadow-lg transition">Explore Products</a>
+            <a href="#contact" class="px-5 py-3 rounded-2xl border border-slate-300 font-semibold hover:bg-white transition">Contact</a>
           </div>
         </div>
-
-        <aside class="hero-right">
-          <div class="hero-media">
-            <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1000&q=60" alt="Alkaline water pitcher and glass"/>
-          </div>
-          <div style="width:100%" class="hero-card">
-            <div style="display:flex;justify-content:space-between;align-items:center">
-              <div>
-                <div style="font-size:14px;color:var(--muted)">Capacity</div>
-                <div style="font-weight:700">10 L</div>
-              </div>
-              <div>
-                <div style="font-size:14px;color:var(--muted)">Warranty</div>
-                <div style="font-weight:700">2 Years</div>
-              </div>
+        <div class="relative">
+          <div class="aspect-[4/3] w-full rounded-3xl shadow-xl glass border border-white/60 flex items-center justify-center">
+            <div class="p-8 text-center">
+              <p class="text-sm uppercase tracking-wide text-slate-600">Catalog Snapshot</p>
+              <p class="mt-2 text-2xl font-semibold text-slate-900">Auto-parsed Highlights</p>
+              <ul class="mt-4 text-left list-disc list-inside space-y-1 text-slate-700">
+                <li>Product range overview</li>
+                <li>Key features & benefits</li>
+                <li>Specifications & warranty</li>
+              </ul>
             </div>
           </div>
-        </aside>
-      </section>
+        </div>
+      </div>
+    </div>
+  </header>
 
-      <section id="about" class="reveal">
-        <h2>About Rpure</h2>
-        <p class="lead">We build easy-to-use alkaline systems that combine modern RO filtration with mineral balancing so you enjoy water that's safe and naturally revitalizing.</p>
-        <div class="about-grid" style="margin-top:20px">
-          <div class="about-img"><img src="https://unsplash.com/photos/white-water-heater-on-white-ceramic-sink-QJmcc6i8xAc?auto=format&fit=crop&w=1200&q=60" alt="Rpure installation"/></div>
-          <div class="about-text">
-            <p>Rpure focuses on sustainable, low-waste designs and user-friendly maintenance. Our mineralizer gently restores essential electrolytes to filtered water for better taste and function.</p>
-            <p style="margin-top:12px;color:var(--muted)"><strong>Installations:</strong> Residential & commercial • <strong>Service:</strong> Nationwide tech support • <strong>Certs:</strong> Performance-tested filters</p>
+  <!-- Products -->
+  <section id="products" class="max-w-7xl mx-auto px-6 py-16">
+    <div class="flex items-end justify-between mb-8">
+      <h2 class="text-3xl font-bold text-slate-900">Products</h2>
+      <div class="flex gap-3">
+        <input class="border border-slate-300 rounded-xl px-3 py-2 text-sm" placeholder="Search products" />
+        <select class="border border-slate-300 rounded-xl px-3 py-2 text-sm">
+          <option>All</option>
+          <option>Purifiers</option>
+          <option>Ionizers</option>
+          <option>Filters</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <article class="bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden">
+        <div class="aspect-[4/3] bg-slate-100 flex items-center justify-center text-slate-400">Image</div>
+        <div class="p-5">
+          <h3 class="text-lg font-semibold">Model A</h3>
+          <p class="mt-1 text-sm text-slate-600">Flagship water ionizer with multi-stage filtration.</p>
+          <ul class="mt-3 text-sm text-slate-700 list-disc list-inside space-y-1">
+            <li>7-plate ionization</li>
+            <li>Alkaline & acidic modes</li>
+            <li>Auto-cleaning</li>
+          </ul>
+          <div class="mt-4 flex justify-between items-center">
+            <span class="text-sm font-semibold">Warranty: 1–3 years</span>
+            <a href="#contact" class="text-sm font-semibold text-slate-900">Enquire →</a>
           </div>
         </div>
-      </section>
+      </article>
 
-      <section id="benefits" class="reveal">
-        <h2>Benefits of Alkaline Water</h2>
-        <p class="lead">Alkaline water from Rpure supports everyday wellness in several gentle, natural ways.</p>
-        <div class="benefits">
-          <div class="benefit">
-            <img src="https://images.unsplash.com/photo-1526256262350-7da7584cf5eb?auto=format&fit=crop&w=600&q=60" alt="hydration" style="width:100%;height:120px;object-fit:cover;border-radius:8px;"/>
-            <h4>Improved Hydration</h4>
-            <p>Mineral-enhanced water absorbs more readily, helping you stay hydrated longer.</p>
-          </div>
-
-          <div class="benefit">
-            <img src="https://images.unsplash.com/photo-1542736667-069246bdbc76?auto=format&fit=crop&w=600&q=60" alt="digestion" style="width:100%;height:120px;object-fit:cover;border-radius:8px;"/>
-            <h4>Supports Digestion</h4>
-            <p>Alkaline water may help balance stomach acidity and reduce occasional indigestion.</p>
-          </div>
-
-          <div class="benefit">
-            <img src="https://images.unsplash.com/photo-1549525167-7b1c6ce6cc5f?auto=format&fit=crop&w=600&q=60" alt="detox" style="width:100%;height:120px;object-fit:cover;border-radius:8px;"/>
-            <h4>Detox & Antioxidant Support</h4>
-            <p>Rich mineral content and improved hydration assist the body’s natural detox processes.</p>
+      <article class="bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden">
+        <div class="aspect-[4/3] bg-slate-100 flex items-center justify-center text-slate-400">Image</div>
+        <div class="p-5">
+          <h3 class="text-lg font-semibold">Model B</h3>
+          <p class="mt-1 text-sm text-slate-600">Compact purifier ideal for homes and offices.</p>
+          <ul class="mt-3 text-sm text-slate-700 list-disc list-inside space-y-1">
+            <li>RO + UV + UF</li>
+            <li>Mineralizer</li>
+            <li>Smart alerts</li>
+          </ul>
+          <div class="mt-4 flex justify-between items-center">
+            <span class="text-sm font-semibold">Warranty: 1–2 years</span>
+            <a href="#contact" class="text-sm font-semibold text-slate-900">Enquire →</a>
           </div>
         </div>
-      </section>
+      </article>
 
-      <section id="products" class="reveal">
-        <h2>Products</h2>
-        <p class="lead">Thoughtful designs, reliable filtration, and easy maintenance — choose the model that fits your life.</p>
-        <div class="products">
-          <article class="product">
-            <img src="https://images.unsplash.com/photo-1582719478376-9bd5b3b4b3b8?auto=format&fit=crop&w=1200&q=60" alt="Rpure AquaSmart"/>
-            <h3>Rpure AquaSmart</h3>
-            <small>Compact alkaline RO for families • 10L</small>
-            <div style="margin-top:12px"><a href="#contact" class="btn-primary">Request Quote</a></div>
-          </article>
-
-          <article class="product">
-            <img src="https://images.unsplash.com/photo-1586256005988-8f7a4f0b8aef?auto=format&fit=crop&w=1200&q=60" alt="Rpure PurePro"/>
-            <h3>Rpure PurePro</h3>
-            <small>Mineralizer + RO • Sleek kitchen design</small>
-            <div style="margin-top:12px"><a href="#contact" class="btn-primary">Request Quote</a></div>
-          </article>
-
-          <article class="product">
-            <img src="https://images.unsplash.com/photo-1582719478134-e1f6a7d7f2a5?auto=format&fit=crop&w=1200&q=60" alt="Rpure Commercial"/>
-            <h3>Rpure Commercial</h3>
-            <small>High-capacity alkaline systems for offices</small>
-            <div style="margin-top:12px"><a href="#contact" class="btn-primary">Request Quote</a></div>
-          </article>
-        </div>
-      </section>
-
-      <section id="contact" class="reveal">
-        <h2>Contact</h2>
-        <p class="lead">We’ll get back to you within 24–48 hours for quotes and service requests.</p>
-        <div class="contact-grid">
-          <div class="contact-card">
-            <h3>Get in touch</h3>
-            <p style="color:var(--muted);margin-top:8px">📞 +91 12345 67890<br>✉️ info@rpure.example<br>🏠 123 Water Street, Clean City</p>
-            <p style="margin-top:12px;color:var(--muted)"><strong>Business hours:</strong> Mon–Sat • 9AM–6PM</p>
-          </div>
-          <div class="contact-card">
-            <h3>Request a quote</h3>
-            <form onsubmit="return sendEmail(event)">
-              <input id="name" placeholder="Full name" required />
-              <input id="email" type="email" placeholder="Email" required />
-              <input id="phone" placeholder="Phone" required />
-              <input id="model" placeholder="Model (optional)" />
-              <textarea id="msg" rows="4" placeholder="Message (optional)"></textarea>
-              <input type="submit" value="Send Request" />
-            </form>
+      <article class="bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden">
+        <div class="aspect-[4/3] bg-slate-100 flex items-center justify-center text-slate-400">Image</div>
+        <div class="p-5">
+          <h3 class="text-lg font-semibold">Model C</h3>
+          <p class="mt-1 text-sm text-slate-600">High-flow filtration unit for larger families.</p>
+          <ul class="mt-3 text-sm text-slate-700 list-disc list-inside space-y-1">
+            <li>Multi-stage filters</li>
+            <li>Touch control</li>
+            <li>Energy efficient</li>
+          </ul>
+          <div class="mt-4 flex justify-between items-center">
+            <span class="text-sm font-semibold">Warranty: 1 year</span>
+            <a href="#contact" class="text-sm font-semibold text-slate-900">Enquire →</a>
           </div>
         </div>
-      </section>
+      </article>
+    </div>
+  </section>
 
-    </main>
+  <!-- Features -->
+  <section id="features" class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-slate-900">Why Choose R-Pure</h2>
+      <div class="mt-8 grid md:grid-cols-3 gap-6">
+        <div class="p-6 border border-slate-200 rounded-2xl">
+          <h3 class="font-semibold text-lg">Advanced Filtration</h3>
+          <p class="mt-2 text-slate-600">Multi-stage purification with options like RO, UV, UF, and mineralization.</p>
+        </div>
+        <div class="p-6 border border-slate-200 rounded-2xl">
+          <h3 class="font-semibold text-lg">Ionization Options</h3>
+          <p class="mt-2 text-slate-600">Produce alkaline and acidic water settings for different uses.</p>
+        </div>
+        <div class="p-6 border border-slate-200 rounded-2xl">
+          <h3 class="font-semibold text-lg">Smart & Reliable</h3>
+          <p class="mt-2 text-slate-600">Auto-cleaning, filter alerts, and solid warranty support.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <footer>
-      <div>© <span id="yr"></span> Rpure — Alkaline Water Solutions</div>
-    </footer>
-  </div>
+  <!-- Specs -->
+  <section id="specs" class="max-w-7xl mx-auto px-6 py-16">
+    <h2 class="text-3xl font-bold text-slate-900">Specifications</h2>
+    <div class="mt-6 overflow-x-auto">
+      <table class="min-w-full text-sm">
+        <thead>
+          <tr class="text-left bg-slate-100">
+            <th class="px-4 py-3 font-semibold">Model</th>
+            <th class="px-4 py-3 font-semibold">Stages</th>
+            <th class="px-4 py-3 font-semibold">Flow Rate</th>
+            <th class="px-4 py-3 font-semibold">Power</th>
+            <th class="px-4 py-3 font-semibold">Notes</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-slate-200">
+          <tr>
+            <td class="px-4 py-3 font-medium">Model A</td>
+            <td class="px-4 py-3">7</td>
+            <td class="px-4 py-3">2 L/min</td>
+            <td class="px-4 py-3">45 W</td>
+            <td class="px-4 py-3">Ionizer with alkaline/acid modes</td>
+          </tr>
+          <tr>
+            <td class="px-4 py-3 font-medium">Model B</td>
+            <td class="px-4 py-3">5</td>
+            <td class="px-4 py-3">1.5 L/min</td>
+            <td class="px-4 py-3">35 W</td>
+            <td class="px-4 py-3">RO + UV + UF</td>
+          </tr>
+          <tr>
+            <td class="px-4 py-3 font-medium">Model C</td>
+            <td class="px-4 py-3">6</td>
+            <td class="px-4 py-3">2.5 L/min</td>
+            <td class="px-4 py-3">40 W</td>
+            <td class="px-4 py-3">High-flow filtration</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
 
-  <script>
-    // year
-    document.getElementById('yr').textContent = new Date().getFullYear();
-
-    // mailto form fallback
-    function sendEmail(e){
-      e.preventDefault();
-      const name = encodeURIComponent(document.getElementById('name').value.trim());
-      const email = encodeURIComponent(document.getElementById('email').value.trim());
-      const phone = encodeURIComponent(document.getElementById('phone').value.trim());
-      const model = encodeURIComponent(document.getElementById('model').value.trim());
-      const msg = encodeURIComponent(document.getElementById('msg').value.trim());
-      const subject = encodeURIComponent('Rpure Quote Request - ' + (name || 'Customer'));
-      const body = encodeURIComponent('Name: ' + decodeURIComponent(name) + '\nEmail: ' + decodeURIComponent(email) + '\nPhone: ' + decodeURIComponent(phone) + '\nModel: ' + decodeURIComponent(model) + '\nMessage: ' + decodeURIComponent(msg));
-      window.location.href = 'mailto:info@rpure.example?subject=' + subject + '&body=' + body;
-      return false;
-    }
-
-    // reveal on scroll
-    const revealItems = document.querySelectorAll('.reveal');
-    const io = new IntersectionObserver((entries)=>{
-      entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target); } });
-    },{threshold:0.18});
-    revealItems.forEach(i=>io.observe(i));
-  </script>
+  <!-- Contact -->
+  <footer id="contact" class="py-16">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="bg-white rounded-3xl shadow-sm border border-slate-100 p-8">
+        <h3 class="text-2xl font-bold text-slate-900">Get in touch</h3>
+        <form class="mt-6 grid sm:grid-cols-2 gap-4">
+          <input class="border border-slate-300 rounded-2xl px-4 py-3" placeholder="Your name" />
+          <input class="border border-slate-300 rounded-2xl px-4 py-3" placeholder="Email" type="email" />
+          <input class="sm:col-span-2 border border-slate-300 rounded-2xl px-4 py-3" placeholder="Phone" />
+          <textarea class="sm:col-span-2 border border-slate-300 rounded-2xl px-4 py-3" rows="4" placeholder="Message"></textarea>
+          <button class="sm:col-span-2 px-5 py-3 rounded-2xl bg-slate-900 text-white font-semibold shadow-md hover:shadow-lg transition">Send</button>
+        </form>
+      </div>
+      <p class="text-center text-slate-500 mt-6 text-sm">© R-Pure — Auto-generated draft from catalog. Provide brand colors and product images to refine.</p>
+    </div>
+  </footer>
 </body>
 </html>
